@@ -46,7 +46,14 @@ const SearchPage = () => {
 
   return (
     <Container maxWidth="lg" sx={{ pt: 2 }}>
-      <TextField fullWidth label="Search Star Wars" variant="outlined" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+      <TextField
+        helperText={'Try to find Darth Vader'}
+        fullWidth
+        label="Search Star Wars"
+        variant="outlined"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
 
       {loading && <CircularProgress sx={{ mt: 2 }} />}
 
