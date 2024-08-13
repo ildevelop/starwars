@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { TextField, Card, CardContent, Typography, Button, Grid, CircularProgress, Box } from '@mui/material';
+import { TextField, Card, CardContent, Typography, Button, Grid, CircularProgress, Box, Container } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import useDebounce from '../hooks/debounce';
@@ -45,14 +45,14 @@ const SearchPage = () => {
   }, [categories, debouncedQuery]);
 
   return (
-    <Box sx={{ p: 2 }}>
+    <Container maxWidth="lg" sx={{ pt: 2 }}>
       <TextField fullWidth label="Search Star Wars" variant="outlined" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
 
       {loading && <CircularProgress sx={{ mt: 2 }} />}
 
       {Object.keys(searchByCategory).map((category) => (
         <Box key={category} sx={{ mt: 2 }}>
-          <Typography variant="h6">{category.charAt(0).toUpperCase() + category.slice(1)}</Typography>
+          {searchByCategory[category].length > 0 && <Typography variant="h6">{category.charAt(0).toUpperCase() + category.slice(1)}</Typography>}
           <Grid container spacing={2}>
             {searchByCategory[category]?.map((result: { name: string; title: string }, index: number) => (
               <Grid item xs={12} sm={4} key={index}>
@@ -75,7 +75,7 @@ const SearchPage = () => {
           )}
         </Box>
       ))}
-    </Box>
+    </Container>
   );
 };
 

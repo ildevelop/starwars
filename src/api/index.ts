@@ -6,6 +6,15 @@ export const getAllCategoriesAPI = async (): Promise<string[]> => {
   return categories;
 };
 
+export const getByCategoryAPI = async (category: string = 'people'): Promise<unknown[]> => {
+  try {
+    const response = await axios.get(`https://swapi.dev/api/${category}`);
+    return response.data.results;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
 export const getDataByCategoriesAPI = async (categories: string[], search: string) => {
   const promises = categories.map((category) => axios.get(`https://swapi.dev/api/${category}/?search=${search}`));
 
