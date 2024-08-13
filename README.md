@@ -2,10 +2,26 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To start, you'll need to have Node.js (14 or higher) installed on your machine. Then:
+
+1. Clone this repository: `git clone https://github.com/your-username/this-repo.git`
+2. Navigate into the project directory: `cd this-repo`
+3. Install dependencies: `npm install` or `yarn install`
+4. Start the development server: `npm run dev` or `yarn dev`
+
+## Features
+
+This template includes:
+
+* A basic React setup with Vite
+* ESLint rules for type checking and stylistic consistency
+* Support for Fast Refresh using Babel or SWC
+
+## Running Tests
+
+To run tests, execute the following command in your terminal: `npm run test` or `yarn test`
 
 ## Expanding the ESLint configuration
 
